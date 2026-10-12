@@ -10,7 +10,9 @@ const accentByType = {
 }
 
 function accentFor(item) {
-  if (item.type === 'activity' && item.tags?.includes('outdoors')) return 'bg-clay'
+  if (item.type === 'song') return accentByType.song
+  if (item.tags?.includes('car')) return 'bg-ink-soft'
+  if (item.tags?.includes('outdoors')) return 'bg-clay'
   return accentByType[item.type] || 'bg-moss'
 }
 
@@ -26,20 +28,24 @@ export default function ContentCard({ item, selected, onSelect }) {
     .slice(0, 2)
     .join(' · ')
 
-  const placeLabel =
-    item.type === 'activity'
-      ? item.tags?.includes('outdoors')
-        ? t.outdoors
-        : t.indoor
-      : null
+  const placeLabel = item.tags?.includes('car')
+    ? t.car
+    : item.tags?.includes('outdoors')
+      ? t.outdoors
+      : item.type === 'activity' || item.tags?.includes('indoor')
+        ? t.indoor
+        : null
+
+  const songLangLabel =
+    item.lang === 'EN' ? 'EN' : item.lang === 'CZ' ? 'CZ' : item.lang === 'SK' ? 'SK' : null
 
   const meta =
     item.type === 'song'
-      ? language === 'CZ'
-        ? 'Písnička'
-        : 'Pesnička'
+      ? [language === 'CZ' ? 'Písnička' : 'Pesnička', songLangLabel]
+          .filter(Boolean)
+          .join(' · ')
       : item.type === 'tip'
-        ? 'Montessori'
+        ? ['Montessori', placeLabel].filter(Boolean).join(' · ')
         : [language === 'CZ' ? cat?.labelCZ : cat?.labelSK, placeLabel]
             .filter(Boolean)
             .join(' · ')
@@ -55,10 +61,10 @@ export default function ContentCard({ item, selected, onSelect }) {
           onSelect(item)
         }
       }}
-      className={`group relative animate-fade-up cursor-pointer overflow-hidden rounded-3xl bg-surface p-5 text-left transition duration-300 ${
+      className={`group relative animate-fade-up cursor-pointer overflow-hidden rounded-3xl bg-surface p-4 text-left transition duration-300 active:scale-[0.99] sm:p-5 ${
         selected
           ? 'ring-2 ring-moss/40 shadow-[0_12px_40px_-16px_rgba(31,63,54,0.35)]'
-          : 'ring-1 ring-line/70 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-20px_rgba(28,25,23,0.25)] hover:ring-moss/25'
+          : 'ring-1 ring-line/70 hover:ring-moss/25 md:hover:-translate-y-0.5 md:hover:shadow-[0_16px_40px_-20px_rgba(28,25,23,0.25)]'
       }`}
     >
       <span
@@ -76,30 +82,36 @@ export default function ContentCard({ item, selected, onSelect }) {
             e.stopPropagation()
             toggleFavorite(item.id)
           }}
-          className={`-mr-1 -mt-1 rounded-full p-1.5 transition ${
+          className={`-mr-1 -mt-1 inline-flex h-10 w-10 items-center justify-center rounded-full transition active:scale-95 ${
             fav
               ? 'text-clay'
               : 'text-line hover:bg-canvas hover:text-clay'
           }`}
         >
-          <Star size={17} fill={fav ? 'currentColor' : 'none'} strokeWidth={1.75} />
+          <Star size={18} fill={fav ? 'currentColor' : 'none'} strokeWidth={1.75} />
         </button>
       </div>
 
       <h3 className="mb-2 pl-2 font-display text-[1.15rem] font-semibold leading-snug tracking-tight text-ink">
         {item.title}
       </h3>
-      <p className="mb-4 line-clamp-2 pl-2 text-sm leading-relaxed text-ink-soft">
+      <p
+        className={`line-clamp-2 pl-2 text-sm leading-relaxed text-ink-soft ${
+          item.type === 'song' ? '' : 'mb-4'
+        }`}
+      >
         {item.description}
       </p>
 
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 pl-2 text-xs text-ink-muted">
-        {item.duration && <span>{item.duration}</span>}
-        {item.duration && stageLabels && (
-          <span className="h-1 w-1 rounded-full bg-line" aria-hidden />
-        )}
-        {stageLabels && <span>{stageLabels}</span>}
-      </div>
+      {item.type !== 'song' && (
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 pl-2 text-xs text-ink-muted">
+          {item.duration && <span>{item.duration}</span>}
+          {item.duration && stageLabels && (
+            <span className="h-1 w-1 rounded-full bg-line" aria-hidden />
+          )}
+          {stageLabels && <span>{stageLabels}</span>}
+        </div>
+      )}
     </article>
   )
 }

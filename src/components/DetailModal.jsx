@@ -8,15 +8,21 @@ export default function DetailModal({ item, onClose, asPanel = false }) {
   const { isFavorite, toggleFavorite } = useFavorites()
   const { language, t } = useLanguage()
   const closeRef = useRef(null)
+  const scrollRef = useRef(null)
 
   useEffect(() => {
     if (!item || asPanel) return
     closeRef.current?.focus()
+    scrollRef.current?.scrollTo?.(0, 0)
     const onKey = (e) => {
       if (e.key === 'Escape') onClose()
     }
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    document.body.classList.add('modal-open')
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.body.classList.remove('modal-open')
+    }
   }, [item, onClose, asPanel])
 
   if (!item) {
@@ -37,39 +43,47 @@ export default function DetailModal({ item, onClose, asPanel = false }) {
 
   const fav = isFavorite(item.id)
   const cat = CATEGORIES.find((c) => c.id === item.category)
-  const stageLabels = item.stages
+  const stageLabels = (item.stages || [])
     .map((id) => STAGES.find((s) => s.id === id))
     .filter(Boolean)
     .map((s) => (language === 'CZ' ? s.labelCZ : s.labelSK))
     .join(' · ')
 
   const body = (
-    <div className="flex h-full flex-col">
-      <div className="flex items-start justify-between gap-3 px-6 pb-2 pt-6 md:px-7">
+    <>
+      {!asPanel && (
+        <div className="flex justify-center pt-2 md:hidden" aria-hidden>
+          <span className="h-1 w-10 rounded-full bg-line" />
+        </div>
+      )}
+
+      <div className="sticky top-0 z-10 flex items-start justify-between gap-3 bg-surface/95 px-4 pb-3 pt-4 backdrop-blur-md sm:px-6 md:static md:bg-transparent md:px-7 md:pb-2 md:pt-6 md:backdrop-blur-none">
         <div className="min-w-0">
           <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-moss">
             {language === 'CZ' ? cat?.labelCZ : cat?.labelSK}
           </p>
           <h2
             id="detail-title"
-            className="font-display text-[1.65rem] font-semibold leading-tight tracking-tight text-ink md:text-[1.85rem]"
+            className="font-display text-[1.45rem] font-semibold leading-tight tracking-tight text-ink sm:text-[1.65rem] md:text-[1.85rem]"
           >
             {item.title}
           </h2>
-          <p className="mt-2 text-sm text-ink-muted">
-            {[item.duration, stageLabels].filter(Boolean).join(' · ')}
-          </p>
+          {item.type !== 'song' && (
+            <p className="mt-2 text-sm text-ink-muted">
+              {[item.duration, stageLabels].filter(Boolean).join(' · ')}
+            </p>
+          )}
         </div>
-        <div className="flex shrink-0 items-center gap-1">
+        <div className="flex shrink-0 items-center gap-0.5">
           <button
             type="button"
             aria-label={fav ? t.removeFavorite : t.addFavorite}
             onClick={() => toggleFavorite(item.id)}
-            className={`rounded-full p-2 transition ${
+            className={`inline-flex h-11 w-11 items-center justify-center rounded-full transition active:scale-95 ${
               fav ? 'text-clay' : 'text-ink-muted hover:bg-canvas hover:text-clay'
             }`}
           >
-            <Star size={20} fill={fav ? 'currentColor' : 'none'} strokeWidth={1.75} />
+            <Star size={22} fill={fav ? 'currentColor' : 'none'} strokeWidth={1.75} />
           </button>
           {!asPanel && (
             <button
@@ -77,26 +91,25 @@ export default function DetailModal({ item, onClose, asPanel = false }) {
               type="button"
               aria-label={t.close}
               onClick={onClose}
-              className="rounded-full p-2 text-ink-muted transition hover:bg-canvas hover:text-ink"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink-muted transition active:scale-95 hover:bg-canvas hover:text-ink"
             >
-              <X size={20} strokeWidth={1.75} />
+              <X size={22} strokeWidth={1.75} />
             </button>
           )}
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-6 py-5 md:px-7">
-        <p className="mb-7 text-[15px] leading-relaxed text-ink-soft">{item.description}</p>
+      <div className="px-4 pb-6 pt-1 sm:px-6 md:px-7 md:pb-7 md:pt-2">
+        {item.type !== 'song' && (
+          <p className="mb-6 text-[15px] leading-relaxed text-ink-soft sm:mb-7">
+            {item.description}
+          </p>
+        )}
 
         {item.type === 'song' && item.lyrics && (
-          <section className="mb-7">
-            <h3 className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-ink-muted">
-              {t.lyrics}
-            </h3>
-            <div className="rounded-3xl bg-clay-soft/60 px-5 py-5">
-              <pre className="lyric-line whitespace-pre-wrap font-display text-[1.2rem] font-medium text-ink">
-                {item.lyrics}
-              </pre>
+          <section className="mb-2">
+            <div className="rounded-3xl bg-clay-soft/50 px-4 py-5 sm:px-6 sm:py-6">
+              <pre className="lyric-line m-0 whitespace-pre-wrap">{item.lyrics}</pre>
             </div>
             {item.actions && (
               <p className="lyric-action mt-3 text-sm">
@@ -144,35 +157,47 @@ export default function DetailModal({ item, onClose, asPanel = false }) {
           </section>
         )}
 
-        {item.notes && (
+        {item.notes && item.type !== 'song' && (
           <section className="border-t border-line/70 pt-5">
             <h3 className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-moss">
               {t.notes}
             </h3>
-            <p className="text-sm leading-relaxed text-ink-soft">{item.notes}</p>
+            <p className="break-words text-sm leading-relaxed text-ink-soft">{item.notes}</p>
           </section>
         )}
       </div>
-    </div>
+    </>
   )
 
   if (asPanel) {
     return (
-      <div className="h-full overflow-hidden bg-surface/90 animate-soft-in">{body}</div>
+      <div
+        ref={scrollRef}
+        className="h-full overflow-y-auto overscroll-contain bg-surface/90 animate-soft-in"
+        style={{ WebkitOverflowScrolling: 'touch' }}
+      >
+        {body}
+      </div>
     )
   }
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-ink/35 p-0 backdrop-blur-[3px] md:items-center md:p-8"
+      className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[3px] md:items-center md:p-8"
       onClick={onClose}
       role="presentation"
     >
       <div
+        ref={scrollRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="detail-title"
-        className="animate-fade-up max-h-[92vh] w-full max-w-lg overflow-hidden rounded-t-[1.75rem] bg-surface shadow-[0_24px_80px_-20px_rgba(28,25,23,0.45)] md:rounded-[1.75rem]"
+        className="animate-sheet-up w-full max-w-lg overflow-y-auto overscroll-contain rounded-t-[1.75rem] bg-surface shadow-[0_24px_80px_-20px_rgba(28,25,23,0.45)] md:animate-fade-up md:rounded-[1.75rem]"
+        style={{
+          maxHeight: 'min(92dvh, calc(var(--app-height) - 0.5rem))',
+          WebkitOverflowScrolling: 'touch',
+          paddingBottom: 'max(0.75rem, var(--safe-bottom))',
+        }}
         onClick={(e) => e.stopPropagation()}
       >
         {body}

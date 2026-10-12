@@ -18,18 +18,14 @@ export const CATEGORIES = [
   { id: 'practices', labelSK: 'Montessori tipy', labelCZ: 'Montessori tipy', nav: 'tips' },
 ]
 
-export const ACTIVITY_PLACES = [
-  { id: 'all', labelSK: 'Všetky', labelCZ: 'Všechny' },
-  { id: 'indoor', labelSK: 'Vnútri', labelCZ: 'Uvnitř' },
+export const FILTERS = [
+  { id: 'car', labelSK: 'V aute', labelCZ: 'V autě' },
+  { id: 'indoor', labelSK: 'Doma', labelCZ: 'Doma' },
   { id: 'outdoors', labelSK: 'Vonku', labelCZ: 'Venku' },
-]
-
-export const QUICK_FILTERS = [
   { id: 'no-prep', labelSK: 'Bez prípravy', labelCZ: 'Bez přípravy' },
   { id: 'under-10', labelSK: 'Do 10 min', labelCZ: 'Do 10 min' },
   { id: 'water', labelSK: 'Vodná hra', labelCZ: 'Vodní hra' },
   { id: 'kitchen', labelSK: 'Kuchyňa', labelCZ: 'Kuchyně' },
-  { id: 'car', labelSK: 'Auto / cesta', labelCZ: 'Auto / cesta' },
 ]
 
 export const NAV_ITEMS = [
@@ -49,9 +45,8 @@ export const UI = {
     allStages: 'Všetky etapy',
     filters: 'Filtre',
     categories: 'Kategórie',
-    quickFilters: 'Rýchle filtre',
-    place: 'Miesto',
-    indoor: 'Vnútri',
+    car: 'V aute',
+    indoor: 'Doma',
     outdoors: 'Vonku',
     materials: 'Materiál',
     steps: 'Postup',
@@ -80,9 +75,8 @@ export const UI = {
     allStages: 'Všechny etapy',
     filters: 'Filtry',
     categories: 'Kategorie',
-    quickFilters: 'Rychlé filtry',
-    place: 'Místo',
-    indoor: 'Uvnitř',
+    car: 'V autě',
+    indoor: 'Doma',
     outdoors: 'Venku',
     materials: 'Materiál',
     steps: 'Postup',

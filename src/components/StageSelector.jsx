@@ -7,12 +7,12 @@ export default function StageSelector({ value, onChange, compact = false }) {
 
   if (compact) {
     return (
-      <div className="relative">
+      <div className="relative w-full">
         <select
           value={value}
           onChange={(e) => onChange(e.target.value)}
           aria-label={t.stage}
-          className="appearance-none rounded-2xl bg-surface py-2 pl-3 pr-8 text-xs font-semibold text-ink outline-none ring-1 ring-line/80 focus:ring-2 focus:ring-moss/30"
+          className="h-10 w-full appearance-none truncate rounded-2xl bg-surface py-0 pl-2.5 pr-7 text-[11px] font-semibold text-ink outline-none ring-1 ring-line/80 focus:ring-2 focus:ring-moss/30 sm:pl-3 sm:pr-8 sm:text-xs"
         >
           <option value="">{t.allStages}</option>
           {STAGES.map((s) => (
@@ -23,7 +23,7 @@ export default function StageSelector({ value, onChange, compact = false }) {
         </select>
         <ChevronDown
           size={14}
-          className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-ink-muted"
+          className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-ink-muted sm:right-2.5"
         />
       </div>
     )
@@ -39,7 +39,7 @@ export default function StageSelector({ value, onChange, compact = false }) {
           value={value}
           onChange={(e) => onChange(e.target.value)}
           aria-label={t.stage}
-          className="w-full appearance-none rounded-2xl bg-surface py-2.5 pl-3.5 pr-9 text-sm font-semibold text-ink outline-none ring-1 ring-line/80 transition focus:ring-2 focus:ring-moss/30"
+          className="h-11 w-full appearance-none rounded-2xl bg-surface py-0 pl-3.5 pr-9 text-sm font-semibold text-ink outline-none ring-1 ring-line/80 transition focus:ring-2 focus:ring-moss/30"
         >
           <option value="">{t.allStages}</option>
           {STAGES.map((s) => (

@@ -3,6 +3,7 @@
 @theme {
   --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Fraunces", "Georgia", serif;
+  --font-lyrics: "Literata", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
 
   --color-canvas: #f4f1ec;
   --color-surface: #fffcf8;
@@ -18,10 +19,32 @@
   --color-clay-soft: #f3e0d2;
 }
 
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --app-height: 100dvh;
+  --bottom-nav-space: calc(5.75rem + var(--safe-bottom));
+}
+
+@supports not (height: 100dvh) {
+  :root {
+    --app-height: 100vh;
+  }
+}
+
+html {
+  height: var(--app-height);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 html,
 body,
 #root {
   height: 100%;
+  max-height: var(--app-height);
 }
 
 body {
@@ -35,8 +58,15 @@ body {
     radial-gradient(ellipse 70% 50% at 100% 0%, rgba(196, 120, 74, 0.1), transparent 50%),
     radial-gradient(circle at 80% 100%, rgba(47, 93, 80, 0.06), transparent 40%),
     linear-gradient(180deg, #f7f4ef 0%, #efebe4 100%);
-  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+/* fixed backgrounds jank on iOS/Android Chrome — desktop only */
+@media (min-width: 768px) {
+  body {
+    background-attachment: fixed;
+  }
 }
 
 * {
@@ -50,6 +80,21 @@ textarea {
   font: inherit;
 }
 
+/* Prevent iOS zoom-on-focus; keep readable on Pixel / iPhone */
+@media (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+button,
+[role='button'] {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -58,6 +103,13 @@ textarea {
 ::-webkit-scrollbar-thumb {
   background: #c4bbb0;
   border-radius: 999px;
+}
+
+@media (max-width: 767px) {
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 }
 
 @keyframes fade-up {
@@ -80,6 +132,17 @@ textarea {
   }
 }
 
+@keyframes sheet-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-fade-up {
   animation: fade-up 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -88,8 +151,36 @@ textarea {
   animation: soft-in 0.25s ease-out both;
 }
 
+.animate-sheet-up {
+  animation: sheet-up 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-soft-in,
+  .animate-sheet-up {
+    animation: none;
+  }
+}
+
 .lyric-line {
-  line-height: 1.8;
+  font-family: var(--font-lyrics);
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-size: 1.125rem;
+  line-height: 1.85;
+  letter-spacing: 0.015em;
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 640px) {
+  .lyric-line {
+    font-size: 1.22rem;
+    line-height: 1.9;
+  }
 }
 
 .lyric-action {
@@ -105,4 +196,21 @@ textarea {
   z-index: 0;
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+body.modal-open {
+  overflow: hidden;
+  /* Do NOT set touch-action:none — it blocks scrolling inside the sheet on iOS/Android */
+}
+
+.app-shell {
+  min-height: var(--app-height);
+  height: var(--app-height);
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
+}
+
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
 }

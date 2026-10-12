@@ -1,8 +1,7 @@
 import { Check, Dices, Lightbulb, Music, Sparkles, Star } from 'lucide-react'
-import { NAV_ITEMS, QUICK_FILTERS } from '../data/constants'
+import { FILTERS, NAV_ITEMS } from '../data/constants'
 import { useLanguage } from '../context/LanguageContext'
 import StageSelector from './StageSelector'
-import PlaceToggle from './PlaceToggle'
 
 const ICONS = { Sparkles, Music, Lightbulb, Star }
 
@@ -11,9 +10,7 @@ export default function Sidebar({
   onNavChange,
   stage,
   onStageChange,
-  place,
-  onPlaceChange,
-  quickFilters,
+  filters,
   onToggleFilter,
   onQuickPick,
 }) {
@@ -50,49 +47,47 @@ export default function Sidebar({
         })}
       </nav>
 
-      <div className="mb-6">
-        <StageSelector value={stage} onChange={onStageChange} />
-      </div>
-
-      {nav === 'activities' && (
+      {nav !== 'songs' && (
         <div className="mb-6">
-          <PlaceToggle value={place} onChange={onPlaceChange} />
+          <StageSelector value={stage} onChange={onStageChange} />
         </div>
       )}
 
-      <div className="mb-6">
-        <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-ink-muted">
-          {t.quickFilters}
-        </p>
-        <div className="flex flex-col gap-1">
-          {QUICK_FILTERS.map((f) => {
-            const active = quickFilters.includes(f.id)
-            return (
-              <button
-                key={f.id}
-                type="button"
-                onClick={() => onToggleFilter(f.id)}
-                className={`flex items-center gap-2.5 rounded-xl px-2.5 py-2 text-left text-sm transition ${
-                  active
-                    ? 'bg-clay-soft font-semibold text-ink'
-                    : 'text-ink-soft hover:bg-surface'
-                }`}
-              >
-                <span
-                  className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-[5px] ${
+      {nav !== 'songs' && (
+        <div className="mb-6">
+          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-ink-muted">
+            {t.filters}
+          </p>
+          <div className="flex flex-col gap-1">
+            {FILTERS.map((f) => {
+              const active = filters.includes(f.id)
+              return (
+                <button
+                  key={f.id}
+                  type="button"
+                  onClick={() => onToggleFilter(f.id)}
+                  className={`flex min-h-10 items-center gap-2.5 rounded-xl px-2.5 py-2 text-left text-sm transition ${
                     active
-                      ? 'bg-clay text-white'
-                      : 'bg-surface ring-1 ring-line'
+                      ? 'bg-clay-soft font-semibold text-ink'
+                      : 'text-ink-soft hover:bg-surface'
                   }`}
                 >
-                  {active ? <Check size={11} strokeWidth={3} /> : null}
-                </span>
-                {language === 'CZ' ? f.labelCZ : f.labelSK}
-              </button>
-            )
-          })}
+                  <span
+                    className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-[5px] ${
+                      active
+                        ? 'bg-clay text-white'
+                        : 'bg-surface ring-1 ring-line'
+                    }`}
+                  >
+                    {active ? <Check size={11} strokeWidth={3} /> : null}
+                  </span>
+                  {language === 'CZ' ? f.labelCZ : f.labelSK}
+                </button>
+              )
+            })}
+          </div>
         </div>
-      </div>
+      )}
 
       <button
         type="button"

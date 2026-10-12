@@ -3,7 +3,6 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import BottomNav from './components/BottomNav'
 import FilterChips from './components/FilterChips'
-import PlaceToggle from './components/PlaceToggle'
 import ContentCard from './components/ContentCard'
 import DetailModal from './components/DetailModal'
 import { LanguageProvider, useLanguage } from './context/LanguageContext'
@@ -19,10 +18,9 @@ function AppShell() {
 
   const [nav, setNav] = useState('activities')
   const [stage, setStage] = useState('')
-  const [place, setPlace] = useState('all')
   const [search, setSearch] = useState('')
   const [searchOpen, setSearchOpen] = useState(false)
-  const [quickFilters, setQuickFilters] = useState([])
+  const [filters, setFilters] = useState([])
   const [selected, setSelected] = useState(null)
   const searchInputRef = useRef(null)
 
@@ -31,9 +29,8 @@ function AppShell() {
     nav,
     stage,
     search,
-    quickFilters,
+    filters,
     favorites,
-    place,
   })
 
   const navLabel =
@@ -41,7 +38,7 @@ function AppShell() {
     ''
 
   const toggleFilter = useCallback((id) => {
-    setQuickFilters((prev) =>
+    setFilters((prev) =>
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
     )
   }, [])
@@ -55,16 +52,20 @@ function AppShell() {
   }, [])
 
   const handleQuickPick = useCallback(() => {
-    const pool = content.filter(
-      (item) =>
-        item.type === 'activity' &&
-        (!stage || item.stages.includes(stage)),
-    )
+    const pool = content.filter((item) => {
+      if (item.type !== 'activity') return false
+      if (stage && !item.stages.includes(stage)) return false
+      if (filters.length > 0) {
+        const tags = item.tags || []
+        if (!filters.every((f) => tags.includes(f))) return false
+      }
+      return true
+    })
     if (pool.length === 0) return
     const pick = pool[Math.floor(Math.random() * pool.length)]
     setNav('activities')
     setSelected(pick)
-  }, [content, stage])
+  }, [content, stage, filters])
 
   useEffect(() => {
     const onKey = (e) => {
@@ -94,10 +95,10 @@ function AppShell() {
 
   useEffect(() => {
     setSelected(null)
-  }, [nav, stage, search, quickFilters, place])
+  }, [nav, stage, search, filters])
 
   return (
-    <div className="relative flex h-full min-h-0 flex-col md:flex-row">
+    <div className="app-shell relative flex min-h-0 flex-col md:flex-row">
       <div className="noise-overlay" aria-hidden />
 
       <Sidebar
@@ -105,9 +106,7 @@ function AppShell() {
         onNavChange={setNav}
         stage={stage}
         onStageChange={setStage}
-        place={place}
-        onPlaceChange={setPlace}
-        quickFilters={quickFilters}
+        filters={filters}
         onToggleFilter={toggleFilter}
         onQuickPick={handleQuickPick}
       />
@@ -115,6 +114,7 @@ function AppShell() {
       <div className="relative z-10 flex min-h-0 min-w-0 flex-1 flex-col md:pr-3 md:py-3">
         <div className="flex min-h-0 flex-1 flex-col overflow-hidden md:rounded-[1.75rem] md:bg-surface/55 md:ring-1 md:ring-line/60 md:backdrop-blur-sm">
           <Header
+            nav={nav}
             stage={stage}
             onStageChange={setStage}
             searchOpen={searchOpen}
@@ -125,30 +125,28 @@ function AppShell() {
           />
 
           <FilterChips
-            quickFilters={quickFilters}
+            nav={nav}
+            filters={filters}
             onToggleFilter={toggleFilter}
             onQuickPick={handleQuickPick}
-            nav={nav}
-            place={place}
-            onPlaceChange={setPlace}
           />
 
           <div className="flex min-h-0 flex-1">
-            <main className="min-h-0 flex-1 overflow-y-auto px-4 pb-28 pt-2 md:px-8 md:pb-8 md:pt-4">
-              <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <h2 className="font-display text-3xl font-semibold tracking-tight text-ink md:text-[2.15rem]">
-                    {navLabel}
-                  </h2>
-                  <p className="mt-1 text-sm text-ink-muted">
-                    {filtered.length} {t.results}
-                  </p>
-                </div>
-                {nav === 'activities' && (
-                  <div className="hidden md:block md:min-w-[280px]">
-                    <PlaceToggle value={place} onChange={setPlace} />
-                  </div>
-                )}
+            <main
+              className="min-h-0 flex-1 overflow-y-auto overscroll-y-contain px-3 pt-2 sm:px-4 md:px-8 md:pb-8 md:pt-4"
+              style={{
+                paddingBottom: isDesktop
+                  ? undefined
+                  : 'var(--bottom-nav-space)',
+              }}
+            >
+              <div className="mb-4 md:mb-5">
+                <h2 className="font-display text-[1.75rem] font-semibold tracking-tight text-ink sm:text-3xl md:text-[2.15rem]">
+                  {navLabel}
+                </h2>
+                <p className="mt-1 text-sm text-ink-muted">
+                  {filtered.length} {t.results}
+                </p>
               </div>
 
               {filtered.length === 0 ? (
@@ -157,7 +155,7 @@ function AppShell() {
                 </div>
               ) : (
                 <div
-                  className={`grid grid-cols-1 gap-4 sm:grid-cols-2 ${
+                  className={`grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 ${
                     selected && isDesktop ? 'xl:grid-cols-2' : 'xl:grid-cols-3'
                   }`}
                 >
