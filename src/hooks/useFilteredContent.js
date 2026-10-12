@@ -21,6 +21,8 @@ export function useFilteredContent({
         if (item.type !== 'tip') return false
       } else if (nav === 'encyclopedia') {
         if (item.type !== 'encyclopedia') return false
+      } else if (nav === 'countries') {
+        if (item.type !== 'country') return false
       }
 
       if (

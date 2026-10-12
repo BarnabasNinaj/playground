@@ -1,0 +1,1166 @@
+[
+  {
+    "cca2": "AD",
+    "en": "Andorra",
+    "sk": "Andorra",
+    "cz": "Andorra"
+  },
+  {
+    "cca2": "AE",
+    "en": "United Arab Emirates",
+    "sk": "Spojené arabské emiráty",
+    "cz": "Spojené arabské emiráty"
+  },
+  {
+    "cca2": "AF",
+    "en": "Afghanistan",
+    "sk": "Afganistan",
+    "cz": "Afghánistán"
+  },
+  {
+    "cca2": "AG",
+    "en": "Antigua and Barbuda",
+    "sk": "Antigua a Barbuda",
+    "cz": "Antigua a Barbuda"
+  },
+  {
+    "cca2": "AL",
+    "en": "Albania",
+    "sk": "Albánsko",
+    "cz": "Albánie"
+  },
+  {
+    "cca2": "AM",
+    "en": "Armenia",
+    "sk": "Arménsko",
+    "cz": "Arménie"
+  },
+  {
+    "cca2": "AO",
+    "en": "Angola",
+    "sk": "Angola",
+    "cz": "Angola"
+  },
+  {
+    "cca2": "AR",
+    "en": "Argentina",
+    "sk": "Argentína",
+    "cz": "Argentina"
+  },
+  {
+    "cca2": "AT",
+    "en": "Austria",
+    "sk": "Rakúsko",
+    "cz": "Rakousko"
+  },
+  {
+    "cca2": "AU",
+    "en": "Australia",
+    "sk": "Austrália",
+    "cz": "Austrálie"
+  },
+  {
+    "cca2": "AZ",
+    "en": "Azerbaijan",
+    "sk": "AzerbajǇan",
+    "cz": "Ázerbájdžán"
+  },
+  {
+    "cca2": "BA",
+    "en": "Bosnia and Herzegovina",
+    "sk": "Bosna a Hercegovina",
+    "cz": "Bosna a Hercegovina"
+  },
+  {
+    "cca2": "BB",
+    "en": "Barbados",
+    "sk": "Barbados",
+    "cz": "Barbados"
+  },
+  {
+    "cca2": "BD",
+    "en": "Bangladesh",
+    "sk": "Bangladéš",
+    "cz": "Bangladéš"
+  },
+  {
+    "cca2": "BE",
+    "en": "Belgium",
+    "sk": "Belgicko",
+    "cz": "Belgie"
+  },
+  {
+    "cca2": "BF",
+    "en": "Burkina Faso",
+    "sk": "Burkina Faso",
+    "cz": "Burkina Faso"
+  },
+  {
+    "cca2": "BG",
+    "en": "Bulgaria",
+    "sk": "Bulharsko",
+    "cz": "Bulharsko"
+  },
+  {
+    "cca2": "BH",
+    "en": "Bahrain",
+    "sk": "Bahrajn",
+    "cz": "Bahrajn"
+  },
+  {
+    "cca2": "BI",
+    "en": "Burundi",
+    "sk": "Burundi",
+    "cz": "Burundi"
+  },
+  {
+    "cca2": "BJ",
+    "en": "Benin",
+    "sk": "Benin",
+    "cz": "Benin"
+  },
+  {
+    "cca2": "BN",
+    "en": "Brunei",
+    "sk": "Brunej",
+    "cz": "Brunej"
+  },
+  {
+    "cca2": "BO",
+    "en": "Bolivia",
+    "sk": "Bolívia",
+    "cz": "Bolívie"
+  },
+  {
+    "cca2": "BR",
+    "en": "Brazil",
+    "sk": "Brazília",
+    "cz": "Brazílie"
+  },
+  {
+    "cca2": "BS",
+    "en": "Bahamas",
+    "sk": "Bahamy",
+    "cz": "Bahamy"
+  },
+  {
+    "cca2": "BT",
+    "en": "Bhutan",
+    "sk": "Bhután",
+    "cz": "Bhútán"
+  },
+  {
+    "cca2": "BW",
+    "en": "Botswana",
+    "sk": "Botswana",
+    "cz": "Botswana"
+  },
+  {
+    "cca2": "BY",
+    "en": "Belarus",
+    "sk": "Bielorusko",
+    "cz": "Bělorusko"
+  },
+  {
+    "cca2": "BZ",
+    "en": "Belize",
+    "sk": "Belize",
+    "cz": "Belize"
+  },
+  {
+    "cca2": "CA",
+    "en": "Canada",
+    "sk": "Kanada",
+    "cz": "Kanada"
+  },
+  {
+    "cca2": "CD",
+    "en": "DR Congo",
+    "sk": "Kongo",
+    "cz": "DR Kongo"
+  },
+  {
+    "cca2": "CF",
+    "en": "Central African Republic",
+    "sk": "Stredoafrická republika",
+    "cz": "Středoafrická republika"
+  },
+  {
+    "cca2": "CG",
+    "en": "Congo",
+    "sk": "Kongo",
+    "cz": "Kongo"
+  },
+  {
+    "cca2": "CH",
+    "en": "Switzerland",
+    "sk": "Švajčiarsko",
+    "cz": "Švýcarsko"
+  },
+  {
+    "cca2": "CI",
+    "en": "Ivory Coast",
+    "sk": "Pobržie Slonoviny",
+    "cz": "Pobřeží slonoviny"
+  },
+  {
+    "cca2": "CL",
+    "en": "Chile",
+    "sk": "Čile",
+    "cz": "Chile"
+  },
+  {
+    "cca2": "CM",
+    "en": "Cameroon",
+    "sk": "Kamerun",
+    "cz": "Kamerun"
+  },
+  {
+    "cca2": "CN",
+    "en": "China",
+    "sk": "Čína",
+    "cz": "Čína"
+  },
+  {
+    "cca2": "CO",
+    "en": "Colombia",
+    "sk": "Kolumbia",
+    "cz": "Kolumbie"
+  },
+  {
+    "cca2": "CR",
+    "en": "Costa Rica",
+    "sk": "Kostarika",
+    "cz": "Kostarika"
+  },
+  {
+    "cca2": "CU",
+    "en": "Cuba",
+    "sk": "Kuba",
+    "cz": "Kuba"
+  },
+  {
+    "cca2": "CV",
+    "en": "Cape Verde",
+    "sk": "Kapverdy",
+    "cz": "Kapverdy"
+  },
+  {
+    "cca2": "CY",
+    "en": "Cyprus",
+    "sk": "Cyprus",
+    "cz": "Kypr"
+  },
+  {
+    "cca2": "CZ",
+    "en": "Czechia",
+    "sk": "Česko",
+    "cz": "Česko"
+  },
+  {
+    "cca2": "DE",
+    "en": "Germany",
+    "sk": "Nemecko",
+    "cz": "Německo"
+  },
+  {
+    "cca2": "DJ",
+    "en": "Djibouti",
+    "sk": "ǅibutsko",
+    "cz": "Džibutsko"
+  },
+  {
+    "cca2": "DK",
+    "en": "Denmark",
+    "sk": "Dánsko",
+    "cz": "Dánsko"
+  },
+  {
+    "cca2": "DM",
+    "en": "Dominica",
+    "sk": "Dominika",
+    "cz": "Dominika"
+  },
+  {
+    "cca2": "DO",
+    "en": "Dominican Republic",
+    "sk": "Dominikánska republika",
+    "cz": "Dominikánská republika"
+  },
+  {
+    "cca2": "DZ",
+    "en": "Algeria",
+    "sk": "Alžírsko",
+    "cz": "Alžírsko"
+  },
+  {
+    "cca2": "EC",
+    "en": "Ecuador",
+    "sk": "Ekvádor",
+    "cz": "Ekvádor"
+  },
+  {
+    "cca2": "EE",
+    "en": "Estonia",
+    "sk": "Estónsko",
+    "cz": "Estonsko"
+  },
+  {
+    "cca2": "EG",
+    "en": "Egypt",
+    "sk": "Egypt",
+    "cz": "Egypt"
+  },
+  {
+    "cca2": "ER",
+    "en": "Eritrea",
+    "sk": "Eritrea",
+    "cz": "Eritrea"
+  },
+  {
+    "cca2": "ES",
+    "en": "Spain",
+    "sk": "Španielsko",
+    "cz": "Španělsko"
+  },
+  {
+    "cca2": "ET",
+    "en": "Ethiopia",
+    "sk": "Etiópia",
+    "cz": "Etiopie"
+  },
+  {
+    "cca2": "FI",
+    "en": "Finland",
+    "sk": "Fínsko",
+    "cz": "Finsko"
+  },
+  {
+    "cca2": "FJ",
+    "en": "Fiji",
+    "sk": "Fiǆi",
+    "cz": "Fidži"
+  },
+  {
+    "cca2": "FM",
+    "en": "Micronesia",
+    "sk": "Mikronézia",
+    "cz": "Mikronésie"
+  },
+  {
+    "cca2": "FR",
+    "en": "France",
+    "sk": "Francúzsko",
+    "cz": "Francie"
+  },
+  {
+    "cca2": "GA",
+    "en": "Gabon",
+    "sk": "Gabon",
+    "cz": "Gabon"
+  },
+  {
+    "cca2": "GB",
+    "en": "United Kingdom",
+    "sk": "Veľká Británia (Spojené kráľovstvo)",
+    "cz": "Spojené království"
+  },
+  {
+    "cca2": "GD",
+    "en": "Grenada",
+    "sk": "Grenada",
+    "cz": "Grenada"
+  },
+  {
+    "cca2": "GE",
+    "en": "Georgia",
+    "sk": "Gruzínsko",
+    "cz": "Gruzie"
+  },
+  {
+    "cca2": "GH",
+    "en": "Ghana",
+    "sk": "Ghana",
+    "cz": "Ghana"
+  },
+  {
+    "cca2": "GM",
+    "en": "Gambia",
+    "sk": "Gambia",
+    "cz": "Gambie"
+  },
+  {
+    "cca2": "GN",
+    "en": "Guinea",
+    "sk": "Guinea",
+    "cz": "Guinea"
+  },
+  {
+    "cca2": "GQ",
+    "en": "Equatorial Guinea",
+    "sk": "Rovníková Guinea",
+    "cz": "Rovníková Guinea"
+  },
+  {
+    "cca2": "GR",
+    "en": "Greece",
+    "sk": "Greécko",
+    "cz": "Řecko"
+  },
+  {
+    "cca2": "GT",
+    "en": "Guatemala",
+    "sk": "Guatemala",
+    "cz": "Guatemala"
+  },
+  {
+    "cca2": "GW",
+    "en": "Guinea-Bissau",
+    "sk": "Guinea-Bissau",
+    "cz": "Guinea-Bissau"
+  },
+  {
+    "cca2": "GY",
+    "en": "Guyana",
+    "sk": "Guyana",
+    "cz": "Guyana"
+  },
+  {
+    "cca2": "HN",
+    "en": "Honduras",
+    "sk": "Honduras",
+    "cz": "Honduras"
+  },
+  {
+    "cca2": "HR",
+    "en": "Croatia",
+    "sk": "Chorvátsko",
+    "cz": "Chorvatsko"
+  },
+  {
+    "cca2": "HT",
+    "en": "Haiti",
+    "sk": "Haiti",
+    "cz": "Haiti"
+  },
+  {
+    "cca2": "HU",
+    "en": "Hungary",
+    "sk": "Maďarsko",
+    "cz": "Maďarsko"
+  },
+  {
+    "cca2": "ID",
+    "en": "Indonesia",
+    "sk": "Indonézia",
+    "cz": "Indonésie"
+  },
+  {
+    "cca2": "IE",
+    "en": "Ireland",
+    "sk": "Írsko",
+    "cz": "Irsko"
+  },
+  {
+    "cca2": "IL",
+    "en": "Israel",
+    "sk": "Izrael",
+    "cz": "Izrael"
+  },
+  {
+    "cca2": "IN",
+    "en": "India",
+    "sk": "India",
+    "cz": "Indie"
+  },
+  {
+    "cca2": "IQ",
+    "en": "Iraq",
+    "sk": "Irak",
+    "cz": "Irák"
+  },
+  {
+    "cca2": "IR",
+    "en": "Iran",
+    "sk": "Irán",
+    "cz": "Írán"
+  },
+  {
+    "cca2": "IS",
+    "en": "Iceland",
+    "sk": "Island",
+    "cz": "Island"
+  },
+  {
+    "cca2": "IT",
+    "en": "Italy",
+    "sk": "Taliansko",
+    "cz": "Itálie"
+  },
+  {
+    "cca2": "JM",
+    "en": "Jamaica",
+    "sk": "Jamajka",
+    "cz": "Jamajka"
+  },
+  {
+    "cca2": "JO",
+    "en": "Jordan",
+    "sk": "Jordánsko",
+    "cz": "Jordánsko"
+  },
+  {
+    "cca2": "JP",
+    "en": "Japan",
+    "sk": "Japonsko",
+    "cz": "Japonsko"
+  },
+  {
+    "cca2": "KE",
+    "en": "Kenya",
+    "sk": "Keňa",
+    "cz": "Keňa"
+  },
+  {
+    "cca2": "KG",
+    "en": "Kyrgyzstan",
+    "sk": "Kirgizsko",
+    "cz": "Kyrgyzstán"
+  },
+  {
+    "cca2": "KH",
+    "en": "Cambodia",
+    "sk": "Kamboǆa",
+    "cz": "Kambodža"
+  },
+  {
+    "cca2": "KI",
+    "en": "Kiribati",
+    "sk": "Kiribati",
+    "cz": "Kiribati"
+  },
+  {
+    "cca2": "KM",
+    "en": "Comoros",
+    "sk": "Komory",
+    "cz": "Komory"
+  },
+  {
+    "cca2": "KN",
+    "en": "Saint Kitts and Nevis",
+    "sk": "Svätý Krištof a Nevis",
+    "cz": "Svatý Kryštof a Nevis"
+  },
+  {
+    "cca2": "KP",
+    "en": "North Korea",
+    "sk": "Kórejská ľudovodemokratická republika (KĽR, Severná Kórea)",
+    "cz": "Severní Korea"
+  },
+  {
+    "cca2": "KR",
+    "en": "South Korea",
+    "sk": "Južná Kórea",
+    "cz": "Jižní Korea"
+  },
+  {
+    "cca2": "KW",
+    "en": "Kuwait",
+    "sk": "Kuvajt",
+    "cz": "Kuvajt"
+  },
+  {
+    "cca2": "KZ",
+    "en": "Kazakhstan",
+    "sk": "Kazachstan",
+    "cz": "Kazachstán"
+  },
+  {
+    "cca2": "LA",
+    "en": "Laos",
+    "sk": "Laos",
+    "cz": "Laos"
+  },
+  {
+    "cca2": "LB",
+    "en": "Lebanon",
+    "sk": "Libanon",
+    "cz": "Libanon"
+  },
+  {
+    "cca2": "LC",
+    "en": "Saint Lucia",
+    "sk": "Svätá Lucia",
+    "cz": "Svatá Lucie"
+  },
+  {
+    "cca2": "LI",
+    "en": "Liechtenstein",
+    "sk": "Lichtenštajnsko",
+    "cz": "Lichtenštejnsko"
+  },
+  {
+    "cca2": "LK",
+    "en": "Sri Lanka",
+    "sk": "Srí Lanka",
+    "cz": "Srí Lanka"
+  },
+  {
+    "cca2": "LR",
+    "en": "Liberia",
+    "sk": "Libéria",
+    "cz": "Libérie"
+  },
+  {
+    "cca2": "LS",
+    "en": "Lesotho",
+    "sk": "Lesotho",
+    "cz": "Lesotho"
+  },
+  {
+    "cca2": "LT",
+    "en": "Lithuania",
+    "sk": "Litva",
+    "cz": "Litva"
+  },
+  {
+    "cca2": "LU",
+    "en": "Luxembourg",
+    "sk": "Luxembursko",
+    "cz": "Lucembursko"
+  },
+  {
+    "cca2": "LV",
+    "en": "Latvia",
+    "sk": "Lotyšsko",
+    "cz": "Lotyšsko"
+  },
+  {
+    "cca2": "LY",
+    "en": "Libya",
+    "sk": "Líbya",
+    "cz": "Libye"
+  },
+  {
+    "cca2": "MA",
+    "en": "Morocco",
+    "sk": "Maroko",
+    "cz": "Maroko"
+  },
+  {
+    "cca2": "MC",
+    "en": "Monaco",
+    "sk": "Monako",
+    "cz": "Monako"
+  },
+  {
+    "cca2": "MD",
+    "en": "Moldova",
+    "sk": "Moldavsko",
+    "cz": "Moldavsko"
+  },
+  {
+    "cca2": "ME",
+    "en": "Montenegro",
+    "sk": "Čierna Hora",
+    "cz": "Černá Hora"
+  },
+  {
+    "cca2": "MG",
+    "en": "Madagascar",
+    "sk": "Madagaskar",
+    "cz": "Madagaskar"
+  },
+  {
+    "cca2": "MH",
+    "en": "Marshall Islands",
+    "sk": "Marshallove ostrovy",
+    "cz": "Marshallovy ostrovy"
+  },
+  {
+    "cca2": "MK",
+    "en": "North Macedonia",
+    "sk": "Severné Macedónsko",
+    "cz": "Severní Makedonie"
+  },
+  {
+    "cca2": "ML",
+    "en": "Mali",
+    "sk": "Mali",
+    "cz": "Mali"
+  },
+  {
+    "cca2": "MM",
+    "en": "Myanmar",
+    "sk": "Mjanmarsko",
+    "cz": "Myanmar"
+  },
+  {
+    "cca2": "MN",
+    "en": "Mongolia",
+    "sk": "Mongolsko",
+    "cz": "Mongolsko"
+  },
+  {
+    "cca2": "MR",
+    "en": "Mauritania",
+    "sk": "Mauritánia",
+    "cz": "Mauritánie"
+  },
+  {
+    "cca2": "MT",
+    "en": "Malta",
+    "sk": "Malta",
+    "cz": "Malta"
+  },
+  {
+    "cca2": "MU",
+    "en": "Mauritius",
+    "sk": "Maurícius",
+    "cz": "Mauricius"
+  },
+  {
+    "cca2": "MV",
+    "en": "Maldives",
+    "sk": "Maldivy",
+    "cz": "Maledivy"
+  },
+  {
+    "cca2": "MW",
+    "en": "Malawi",
+    "sk": "Malawi",
+    "cz": "Malawi"
+  },
+  {
+    "cca2": "MX",
+    "en": "Mexico",
+    "sk": "Mexiko",
+    "cz": "Mexiko"
+  },
+  {
+    "cca2": "MY",
+    "en": "Malaysia",
+    "sk": "Malajzia",
+    "cz": "Malajsie"
+  },
+  {
+    "cca2": "MZ",
+    "en": "Mozambique",
+    "sk": "Mozambik",
+    "cz": "Mosambik"
+  },
+  {
+    "cca2": "NA",
+    "en": "Namibia",
+    "sk": "Namíbia",
+    "cz": "Namibie"
+  },
+  {
+    "cca2": "NE",
+    "en": "Niger",
+    "sk": "Niger",
+    "cz": "Niger"
+  },
+  {
+    "cca2": "NG",
+    "en": "Nigeria",
+    "sk": "Nigéria",
+    "cz": "Nigérie"
+  },
+  {
+    "cca2": "NI",
+    "en": "Nicaragua",
+    "sk": "Nikaragua",
+    "cz": "Nikaragua"
+  },
+  {
+    "cca2": "NL",
+    "en": "Netherlands",
+    "sk": "Holansko",
+    "cz": "Nizozemsko"
+  },
+  {
+    "cca2": "NO",
+    "en": "Norway",
+    "sk": "Nórsko",
+    "cz": "Norsko"
+  },
+  {
+    "cca2": "NP",
+    "en": "Nepal",
+    "sk": "Nepál",
+    "cz": "Nepál"
+  },
+  {
+    "cca2": "NR",
+    "en": "Nauru",
+    "sk": "Nauru",
+    "cz": "Nauru"
+  },
+  {
+    "cca2": "NZ",
+    "en": "New Zealand",
+    "sk": "Nový Zéland",
+    "cz": "Nový Zéland"
+  },
+  {
+    "cca2": "OM",
+    "en": "Oman",
+    "sk": "Omán",
+    "cz": "Omán"
+  },
+  {
+    "cca2": "PA",
+    "en": "Panama",
+    "sk": "Panama",
+    "cz": "Panama"
+  },
+  {
+    "cca2": "PE",
+    "en": "Peru",
+    "sk": "Peru",
+    "cz": "Peru"
+  },
+  {
+    "cca2": "PG",
+    "en": "Papua New Guinea",
+    "sk": "Papua-Nová Guinea",
+    "cz": "Papua-Nová Guinea"
+  },
+  {
+    "cca2": "PH",
+    "en": "Philippines",
+    "sk": "Filipíny",
+    "cz": "Filipíny"
+  },
+  {
+    "cca2": "PK",
+    "en": "Pakistan",
+    "sk": "Pakistan",
+    "cz": "Pákistán"
+  },
+  {
+    "cca2": "PL",
+    "en": "Poland",
+    "sk": "Poľsko",
+    "cz": "Polsko"
+  },
+  {
+    "cca2": "PT",
+    "en": "Portugal",
+    "sk": "Portugalsko",
+    "cz": "Portugalsko"
+  },
+  {
+    "cca2": "PW",
+    "en": "Palau",
+    "sk": "Palau",
+    "cz": "Palau"
+  },
+  {
+    "cca2": "PY",
+    "en": "Paraguay",
+    "sk": "Paraguaj",
+    "cz": "Paraguay"
+  },
+  {
+    "cca2": "QA",
+    "en": "Qatar",
+    "sk": "Katar",
+    "cz": "Katar"
+  },
+  {
+    "cca2": "RO",
+    "en": "Romania",
+    "sk": "Rumunsko",
+    "cz": "Rumunsko"
+  },
+  {
+    "cca2": "RS",
+    "en": "Serbia",
+    "sk": "Srbsko",
+    "cz": "Srbsko"
+  },
+  {
+    "cca2": "RU",
+    "en": "Russia",
+    "sk": "Rusko",
+    "cz": "Rusko"
+  },
+  {
+    "cca2": "RW",
+    "en": "Rwanda",
+    "sk": "Rwanda",
+    "cz": "Rwanda"
+  },
+  {
+    "cca2": "SA",
+    "en": "Saudi Arabia",
+    "sk": "Saudská Arábia",
+    "cz": "Saúdská Arábie"
+  },
+  {
+    "cca2": "SB",
+    "en": "Solomon Islands",
+    "sk": "Salomonove ostrovy",
+    "cz": "Šalamounovy ostrovy"
+  },
+  {
+    "cca2": "SC",
+    "en": "Seychelles",
+    "sk": "Seychely",
+    "cz": "Seychely"
+  },
+  {
+    "cca2": "SD",
+    "en": "Sudan",
+    "sk": "Sudán",
+    "cz": "Súdán"
+  },
+  {
+    "cca2": "SE",
+    "en": "Sweden",
+    "sk": "Švédsko",
+    "cz": "Švédsko"
+  },
+  {
+    "cca2": "SG",
+    "en": "Singapore",
+    "sk": "Singapur",
+    "cz": "Singapur"
+  },
+  {
+    "cca2": "SI",
+    "en": "Slovenia",
+    "sk": "Slovinsko",
+    "cz": "Slovinsko"
+  },
+  {
+    "cca2": "SK",
+    "en": "Slovakia",
+    "sk": "Slovensko",
+    "cz": "Slovensko"
+  },
+  {
+    "cca2": "SL",
+    "en": "Sierra Leone",
+    "sk": "Sierra Leone",
+    "cz": "Sierra Leone"
+  },
+  {
+    "cca2": "SM",
+    "en": "San Marino",
+    "sk": "San Maríno",
+    "cz": "San Marino"
+  },
+  {
+    "cca2": "SN",
+    "en": "Senegal",
+    "sk": "Senegal",
+    "cz": "Senegal"
+  },
+  {
+    "cca2": "SO",
+    "en": "Somalia",
+    "sk": "Somálsko",
+    "cz": "Somálsko"
+  },
+  {
+    "cca2": "SR",
+    "en": "Suriname",
+    "sk": "Surinam",
+    "cz": "Surinam"
+  },
+  {
+    "cca2": "SS",
+    "en": "South Sudan",
+    "sk": "Južný Sudán",
+    "cz": "Jižní Súdán"
+  },
+  {
+    "cca2": "ST",
+    "en": "São Tomé and Príncipe",
+    "sk": "Svätý Tomáš a Princov ostrov",
+    "cz": "Svatý Tomáš a Princův ostrov"
+  },
+  {
+    "cca2": "SV",
+    "en": "El Salvador",
+    "sk": "Salvádor",
+    "cz": "Salvador"
+  },
+  {
+    "cca2": "SY",
+    "en": "Syria",
+    "sk": "Sýria",
+    "cz": "Sýrie"
+  },
+  {
+    "cca2": "SZ",
+    "en": "Eswatini",
+    "sk": "Eswatini",
+    "cz": "eSwatini"
+  },
+  {
+    "cca2": "TD",
+    "en": "Chad",
+    "sk": "Čad",
+    "cz": "Čad"
+  },
+  {
+    "cca2": "TG",
+    "en": "Togo",
+    "sk": "Togo",
+    "cz": "Togo"
+  },
+  {
+    "cca2": "TH",
+    "en": "Thailand",
+    "sk": "Thajsko",
+    "cz": "Thajsko"
+  },
+  {
+    "cca2": "TJ",
+    "en": "Tajikistan",
+    "sk": "Taǆikistan",
+    "cz": "Tádžikistán"
+  },
+  {
+    "cca2": "TL",
+    "en": "Timor-Leste",
+    "sk": "Východný Timor",
+    "cz": "Východní Timor"
+  },
+  {
+    "cca2": "TM",
+    "en": "Turkmenistan",
+    "sk": "Turkménsko",
+    "cz": "Turkmenistán"
+  },
+  {
+    "cca2": "TN",
+    "en": "Tunisia",
+    "sk": "Tunisko",
+    "cz": "Tunisko"
+  },
+  {
+    "cca2": "TO",
+    "en": "Tonga",
+    "sk": "Tonga",
+    "cz": "Tonga"
+  },
+  {
+    "cca2": "TR",
+    "en": "Türkiye",
+    "sk": "Turecko",
+    "cz": "Turecko"
+  },
+  {
+    "cca2": "TT",
+    "en": "Trinidad and Tobago",
+    "sk": "Trinidad a Tobago",
+    "cz": "Trinidad a Tobago"
+  },
+  {
+    "cca2": "TV",
+    "en": "Tuvalu",
+    "sk": "Tuvalu",
+    "cz": "Tuvalu"
+  },
+  {
+    "cca2": "TZ",
+    "en": "Tanzania",
+    "sk": "Tanzánia",
+    "cz": "Tanzanie"
+  },
+  {
+    "cca2": "UA",
+    "en": "Ukraine",
+    "sk": "Ukrajina",
+    "cz": "Ukrajina"
+  },
+  {
+    "cca2": "UG",
+    "en": "Uganda",
+    "sk": "Uganda",
+    "cz": "Uganda"
+  },
+  {
+    "cca2": "US",
+    "en": "United States",
+    "sk": "Spojené štáty americké",
+    "cz": "Spojené státy"
+  },
+  {
+    "cca2": "UY",
+    "en": "Uruguay",
+    "sk": "Uruguaj",
+    "cz": "Uruguay"
+  },
+  {
+    "cca2": "UZ",
+    "en": "Uzbekistan",
+    "sk": "Uzbekistan",
+    "cz": "Uzbekistán"
+  },
+  {
+    "cca2": "VA",
+    "en": "Vatican City",
+    "sk": "Vatikán",
+    "cz": "Vatikán"
+  },
+  {
+    "cca2": "VC",
+    "en": "Saint Vincent and the Grenadines",
+    "sk": "Svätý Vincent a Grenadíny",
+    "cz": "Svatý Vincenc a Grenadiny"
+  },
+  {
+    "cca2": "VE",
+    "en": "Venezuela",
+    "sk": "Venezuela",
+    "cz": "Venezuela"
+  },
+  {
+    "cca2": "VN",
+    "en": "Vietnam",
+    "sk": "Vietnam",
+    "cz": "Vietnam"
+  },
+  {
+    "cca2": "VU",
+    "en": "Vanuatu",
+    "sk": "Vanuatu",
+    "cz": "Vanuatu"
+  },
+  {
+    "cca2": "WS",
+    "en": "Samoa",
+    "sk": "Samoa",
+    "cz": "Samoa"
+  },
+  {
+    "cca2": "YE",
+    "en": "Yemen",
+    "sk": "Jemen",
+    "cz": "Jemen"
+  },
+  {
+    "cca2": "ZA",
+    "en": "South Africa",
+    "sk": "Juhoafrická republika",
+    "cz": "Jihoafrická republika"
+  },
+  {
+    "cca2": "ZM",
+    "en": "Zambia",
+    "sk": "Zambia",
+    "cz": "Zambie"
+  },
+  {
+    "cca2": "ZW",
+    "en": "Zimbabwe",
+    "sk": "Zimbabwe",
+    "cz": "Zimbabwe"
+  }
+]

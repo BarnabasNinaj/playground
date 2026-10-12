@@ -1,8 +1,8 @@
-import { BookOpen, Check, Lightbulb, Music, Sparkles, Star } from 'lucide-react'
+import { BookOpen, Check, Globe, Lightbulb, Music, Sparkles, Star } from 'lucide-react'
 import { FILTERS, NAV_ITEMS } from '../data/constants'
 import { useLanguage } from '../context/LanguageContext'
 
-const ICONS = { Sparkles, Music, Lightbulb, BookOpen, Star }
+const ICONS = { Sparkles, Music, Lightbulb, BookOpen, Globe, Star }
 
 export default function Sidebar({
   nav,

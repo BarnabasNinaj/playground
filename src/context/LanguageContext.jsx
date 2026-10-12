@@ -3,6 +3,8 @@ import { contentSK } from '../data/contentSK'
 import { contentCZ } from '../data/contentCZ'
 import { encyclopediaSK } from '../data/encyclopediaSK'
 import { encyclopediaCZ } from '../data/encyclopediaCZ'
+import { countriesSK } from '../data/countriesSK'
+import { countriesCZ } from '../data/countriesCZ'
 import { songs } from '../data/songs'
 import { UI } from '../data/constants'
 
@@ -49,6 +51,7 @@ export function LanguageProvider({ children }) {
         ...(language === 'CZ' ? contentCZ : contentSK),
         ...songs.filter((s) => s.lang === language),
         ...(language === 'CZ' ? encyclopediaCZ : encyclopediaSK),
+        ...(language === 'CZ' ? countriesCZ : countriesSK),
       ],
       t: UI[language] ?? UI.SK,
     }),

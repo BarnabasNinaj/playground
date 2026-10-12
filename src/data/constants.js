@@ -4,6 +4,7 @@ export const CATEGORIES = [
   { id: 'practical', labelSK: 'Praktický život', labelCZ: 'Praktický život', nav: 'activities' },
   { id: 'practices', labelSK: 'Montessori tipy', labelCZ: 'Montessori tipy', nav: 'tips' },
   { id: 'encyclopedia', labelSK: 'Encyklopédia', labelCZ: 'Encyklopedie', nav: 'encyclopedia' },
+  { id: 'countries', labelSK: 'Krajiny', labelCZ: 'Země', nav: 'countries' },
 ]
 
 export const FILTERS = [
@@ -17,6 +18,7 @@ export const NAV_ITEMS = [
   { id: 'songs', labelSK: 'Pesničky', labelCZ: 'Písničky', icon: 'Music' },
   { id: 'tips', labelSK: 'Tipy', labelCZ: 'Tipy', icon: 'Lightbulb' },
   { id: 'encyclopedia', labelSK: 'Zvieratá', labelCZ: 'Zvířata', icon: 'BookOpen' },
+  { id: 'countries', labelSK: 'Krajiny', labelCZ: 'Země', icon: 'Globe' },
   { id: 'favorites', labelSK: 'Obľúbené', labelCZ: 'Oblíbené', icon: 'Star' },
 ]
 
@@ -24,7 +26,7 @@ export const UI = {
   SK: {
     appName: 'playground',
     tagline: 'sprievodca pre každý deň',
-    searchPlaceholder: 'Hľadať aktivitu, zvieratko, text…',
+    searchPlaceholder: 'Hľadať aktivitu, zvieratko, krajinu…',
     search: 'Hľadať',
     filters: 'Filtre',
     categories: 'Kategórie',
@@ -35,6 +37,7 @@ export const UI = {
     steps: 'Postup',
     facts: 'Zaujímavé fakty',
     about: 'O zvieratku',
+    aboutCountry: 'O krajine',
     record: 'Svetový unikát / rekord',
     lyrics: 'Text',
     actions: 'Pohyb',
@@ -53,7 +56,7 @@ export const UI = {
   CZ: {
     appName: 'playground',
     tagline: 'průvodce pro každý den',
-    searchPlaceholder: 'Hledat aktivitu, zvířátko, text…',
+    searchPlaceholder: 'Hledat aktivitu, zvířátko, zemi…',
     search: 'Hledat',
     filters: 'Filtry',
     categories: 'Kategorie',
@@ -64,6 +67,7 @@ export const UI = {
     steps: 'Postup',
     facts: 'Zajímavá fakta',
     about: 'O zvířátku',
+    aboutCountry: 'O zemi',
     record: 'Světový unikát / rekord',
     lyrics: 'Text',
     actions: 'Pohyb',
