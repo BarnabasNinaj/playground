@@ -7,10 +7,12 @@ const accentByType = {
   activity: 'bg-moss',
   song: 'bg-clay',
   tip: 'bg-ink-soft',
+  encyclopedia: 'bg-moss-deep',
 }
 
 function accentFor(item) {
   if (item.type === 'song') return accentByType.song
+  if (item.type === 'encyclopedia') return accentByType.encyclopedia
   if (item.tags?.includes('car')) return 'bg-ink-soft'
   if (item.tags?.includes('outdoors')) return 'bg-clay'
   return accentByType[item.type] || 'bg-moss'
@@ -35,11 +37,13 @@ export default function ContentCard({ item, selected, onSelect }) {
       ? language === 'CZ'
         ? 'Písnička'
         : 'Pesnička'
-      : item.type === 'tip'
-        ? ['Montessori', placeLabel].filter(Boolean).join(' · ')
-        : [language === 'CZ' ? cat?.labelCZ : cat?.labelSK, placeLabel]
-            .filter(Boolean)
-            .join(' · ')
+      : item.type === 'encyclopedia'
+        ? [item.materials?.[0], item.duration].filter(Boolean).join(' · ')
+        : item.type === 'tip'
+          ? ['Montessori', placeLabel].filter(Boolean).join(' · ')
+          : [language === 'CZ' ? cat?.labelCZ : cat?.labelSK, placeLabel]
+              .filter(Boolean)
+              .join(' · ')
 
   return (
     <article
@@ -90,8 +94,13 @@ export default function ContentCard({ item, selected, onSelect }) {
         {item.description}
       </p>
 
-      {item.type !== 'song' && item.duration && (
+      {item.type !== 'song' && item.type !== 'encyclopedia' && item.duration && (
         <p className="mt-4 pl-2 text-xs text-ink-muted">{item.duration}</p>
+      )}
+      {item.type === 'encyclopedia' && item.steps?.length > 0 && (
+        <p className="mt-4 pl-2 text-xs text-ink-muted">
+          {item.steps.length} {language === 'CZ' ? 'faktů' : 'faktov'}
+        </p>
       )}
     </article>
   )

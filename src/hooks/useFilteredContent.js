@@ -12,13 +12,15 @@ export function useFilteredContent({
 
     return content.filter((item) => {
       if (nav === 'favorites') {
-        if (!favorites.includes(item.id)) return false
+        if (!Array.isArray(favorites) || !favorites.includes(item.id)) return false
       } else if (nav === 'activities') {
         if (item.type !== 'activity') return false
       } else if (nav === 'songs') {
         if (item.type !== 'song') return false
       } else if (nav === 'tips') {
         if (item.type !== 'tip') return false
+      } else if (nav === 'encyclopedia') {
+        if (item.type !== 'encyclopedia') return false
       }
 
       if (
@@ -36,6 +38,7 @@ export function useFilteredContent({
         item.title,
         item.description,
         item.notes,
+        item.record,
         item.lyrics,
         item.actions,
         ...(item.materials || []),

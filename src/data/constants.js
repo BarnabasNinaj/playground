@@ -3,6 +3,7 @@ export const CATEGORIES = [
   { id: 'songs', labelSK: 'Pesničky & riekanky', labelCZ: 'Písničky & říkanky', nav: 'songs' },
   { id: 'practical', labelSK: 'Praktický život', labelCZ: 'Praktický život', nav: 'activities' },
   { id: 'practices', labelSK: 'Montessori tipy', labelCZ: 'Montessori tipy', nav: 'tips' },
+  { id: 'encyclopedia', labelSK: 'Encyklopédia', labelCZ: 'Encyklopedie', nav: 'encyclopedia' },
 ]
 
 export const FILTERS = [
@@ -15,6 +16,7 @@ export const NAV_ITEMS = [
   { id: 'activities', labelSK: 'Aktivity', labelCZ: 'Aktivity', icon: 'Sparkles' },
   { id: 'songs', labelSK: 'Pesničky', labelCZ: 'Písničky', icon: 'Music' },
   { id: 'tips', labelSK: 'Tipy', labelCZ: 'Tipy', icon: 'Lightbulb' },
+  { id: 'encyclopedia', labelSK: 'Zvieratá', labelCZ: 'Zvířata', icon: 'BookOpen' },
   { id: 'favorites', labelSK: 'Obľúbené', labelCZ: 'Oblíbené', icon: 'Star' },
 ]
 
@@ -22,7 +24,7 @@ export const UI = {
   SK: {
     appName: 'playground',
     tagline: 'sprievodca pre každý deň',
-    searchPlaceholder: 'Hľadať aktivitu, materiál, text…',
+    searchPlaceholder: 'Hľadať aktivitu, zvieratko, text…',
     search: 'Hľadať',
     filters: 'Filtre',
     categories: 'Kategórie',
@@ -31,6 +33,9 @@ export const UI = {
     outdoors: 'Vonku',
     materials: 'Materiál',
     steps: 'Postup',
+    facts: 'Zaujímavé fakty',
+    about: 'O zvieratku',
+    record: 'Svetový unikát / rekord',
     lyrics: 'Text',
     actions: 'Pohyb',
     notes: 'Poznámka',
@@ -48,7 +53,7 @@ export const UI = {
   CZ: {
     appName: 'playground',
     tagline: 'průvodce pro každý den',
-    searchPlaceholder: 'Hledat aktivitu, materiál, text…',
+    searchPlaceholder: 'Hledat aktivitu, zvířátko, text…',
     search: 'Hledat',
     filters: 'Filtry',
     categories: 'Kategorie',
@@ -57,6 +62,9 @@ export const UI = {
     outdoors: 'Venku',
     materials: 'Materiál',
     steps: 'Postup',
+    facts: 'Zajímavá fakta',
+    about: 'O zvířátku',
+    record: 'Světový unikát / rekord',
     lyrics: 'Text',
     actions: 'Pohyb',
     notes: 'Poznámka',

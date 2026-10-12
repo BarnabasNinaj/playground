@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { contentSK } from '../data/contentSK'
 import { contentCZ } from '../data/contentCZ'
+import { encyclopediaSK } from '../data/encyclopediaSK'
+import { encyclopediaCZ } from '../data/encyclopediaCZ'
 import { songs } from '../data/songs'
 import { UI } from '../data/constants'
 
@@ -46,8 +48,9 @@ export function LanguageProvider({ children }) {
       content: [
         ...(language === 'CZ' ? contentCZ : contentSK),
         ...songs.filter((s) => s.lang === language),
+        ...(language === 'CZ' ? encyclopediaCZ : encyclopediaSK),
       ],
-      t: UI[language],
+      t: UI[language] ?? UI.SK,
     }),
     [language],
   )

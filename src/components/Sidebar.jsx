@@ -1,8 +1,8 @@
-import { Check, Lightbulb, Music, Sparkles, Star } from 'lucide-react'
+import { BookOpen, Check, Lightbulb, Music, Sparkles, Star } from 'lucide-react'
 import { FILTERS, NAV_ITEMS } from '../data/constants'
 import { useLanguage } from '../context/LanguageContext'
 
-const ICONS = { Sparkles, Music, Lightbulb, Star }
+const ICONS = { Sparkles, Music, Lightbulb, BookOpen, Star }
 
 export default function Sidebar({
   nav,
@@ -25,6 +25,7 @@ export default function Sidebar({
         {NAV_ITEMS.map((item) => {
           const Icon = ICONS[item.icon]
           const isActive = nav === item.id
+          if (!Icon) return null
           return (
             <button
               key={item.id}

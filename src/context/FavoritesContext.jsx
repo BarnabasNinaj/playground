@@ -3,15 +3,20 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 const FavoritesContext = createContext(null)
 const STORAGE_KEY = 'playground-favorites'
 
+function readFavorites() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (!raw) return []
+    const parsed = JSON.parse(raw)
+    if (!Array.isArray(parsed)) return []
+    return parsed.filter((id) => typeof id === 'string')
+  } catch {
+    return []
+  }
+}
+
 export function FavoritesProvider({ children }) {
-  const [favorites, setFavorites] = useState(() => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY)
-      return raw ? JSON.parse(raw) : []
-    } catch {
-      return []
-    }
-  })
+  const [favorites, setFavorites] = useState(readFavorites)
 
   useEffect(() => {
     try {
@@ -21,16 +26,24 @@ export function FavoritesProvider({ children }) {
     }
   }, [favorites])
 
-  const isFavorite = useCallback((id) => favorites.includes(id), [favorites])
+  const isFavorite = useCallback(
+    (id) => Array.isArray(favorites) && favorites.includes(id),
+    [favorites],
+  )
 
   const toggleFavorite = useCallback((id) => {
-    setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
-    )
+    setFavorites((prev) => {
+      const list = Array.isArray(prev) ? prev : []
+      return list.includes(id) ? list.filter((x) => x !== id) : [...list, id]
+    })
   }, [])
 
   const value = useMemo(
-    () => ({ favorites, isFavorite, toggleFavorite }),
+    () => ({
+      favorites: Array.isArray(favorites) ? favorites : [],
+      isFavorite,
+      toggleFavorite,
+    }),
     [favorites, isFavorite, toggleFavorite],
   )
 

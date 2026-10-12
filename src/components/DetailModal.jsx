@@ -116,7 +116,7 @@ export default function DetailModal({ item, onClose, asPanel = false }) {
         {item.materials?.length > 0 && (
           <section className="mb-7">
             <h3 className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-ink-muted">
-              {t.materials}
+              {item.type === 'encyclopedia' ? t.about : t.materials}
             </h3>
             <ul className="space-y-2">
               {item.materials.map((m) => (
@@ -135,7 +135,7 @@ export default function DetailModal({ item, onClose, asPanel = false }) {
         {item.steps?.length > 0 && (
           <section className="mb-7">
             <h3 className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-ink-muted">
-              {t.steps}
+              {item.type === 'encyclopedia' ? t.facts : t.steps}
             </h3>
             <ol className="space-y-4">
               {item.steps.map((step, i) => (
@@ -147,6 +147,15 @@ export default function DetailModal({ item, onClose, asPanel = false }) {
                 </li>
               ))}
             </ol>
+          </section>
+        )}
+
+        {item.type === 'encyclopedia' && item.record && (
+          <section className="mb-7 rounded-3xl bg-moss-soft/60 px-4 py-4 sm:px-5">
+            <h3 className="mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-moss">
+              {t.record}
+            </h3>
+            <p className="text-sm leading-relaxed text-ink-soft">{item.record}</p>
           </section>
         )}
 
