@@ -2,7 +2,7 @@ import { Star, X } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 import { useFavorites } from '../context/FavoritesContext'
 import { useLanguage } from '../context/LanguageContext'
-import { CATEGORIES, STAGES } from '../data/constants'
+import { CATEGORIES } from '../data/constants'
 
 export default function DetailModal({ item, onClose, asPanel = false }) {
   const { isFavorite, toggleFavorite } = useFavorites()
@@ -43,11 +43,6 @@ export default function DetailModal({ item, onClose, asPanel = false }) {
 
   const fav = isFavorite(item.id)
   const cat = CATEGORIES.find((c) => c.id === item.category)
-  const stageLabels = (item.stages || [])
-    .map((id) => STAGES.find((s) => s.id === id))
-    .filter(Boolean)
-    .map((s) => (language === 'CZ' ? s.labelCZ : s.labelSK))
-    .join(' · ')
 
   const body = (
     <>
@@ -68,10 +63,8 @@ export default function DetailModal({ item, onClose, asPanel = false }) {
           >
             {item.title}
           </h2>
-          {item.type !== 'song' && (
-            <p className="mt-2 text-sm text-ink-muted">
-              {[item.duration, stageLabels].filter(Boolean).join(' · ')}
-            </p>
+          {item.type !== 'song' && item.duration && (
+            <p className="mt-2 text-sm text-ink-muted">{item.duration}</p>
           )}
         </div>
         <div className="flex shrink-0 items-center gap-0.5">

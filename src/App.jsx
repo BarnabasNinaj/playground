@@ -17,7 +17,6 @@ function AppShell() {
   const isDesktop = useMediaQuery('(min-width: 768px)')
 
   const [nav, setNav] = useState('activities')
-  const [stage, setStage] = useState('')
   const [search, setSearch] = useState('')
   const [searchOpen, setSearchOpen] = useState(false)
   const [filters, setFilters] = useState([])
@@ -27,7 +26,6 @@ function AppShell() {
   const filtered = useFilteredContent({
     content,
     nav,
-    stage,
     search,
     filters,
     favorites,
@@ -50,22 +48,6 @@ function AppShell() {
   const handleClose = useCallback(() => {
     setSelected(null)
   }, [])
-
-  const handleQuickPick = useCallback(() => {
-    const pool = content.filter((item) => {
-      if (item.type !== 'activity') return false
-      if (stage && !item.stages.includes(stage)) return false
-      if (filters.length > 0) {
-        const tags = item.tags || []
-        if (!filters.every((f) => tags.includes(f))) return false
-      }
-      return true
-    })
-    if (pool.length === 0) return
-    const pick = pool[Math.floor(Math.random() * pool.length)]
-    setNav('activities')
-    setSelected(pick)
-  }, [content, stage, filters])
 
   useEffect(() => {
     const onKey = (e) => {
@@ -95,7 +77,11 @@ function AppShell() {
 
   useEffect(() => {
     setSelected(null)
-  }, [nav, stage, search, filters])
+  }, [nav, search, filters])
+
+  useEffect(() => {
+    if (nav !== 'activities' && nav !== 'tips') setFilters([])
+  }, [nav])
 
   return (
     <div className="app-shell relative flex min-h-0 flex-col md:flex-row">
@@ -104,19 +90,13 @@ function AppShell() {
       <Sidebar
         nav={nav}
         onNavChange={setNav}
-        stage={stage}
-        onStageChange={setStage}
         filters={filters}
         onToggleFilter={toggleFilter}
-        onQuickPick={handleQuickPick}
       />
 
       <div className="relative z-10 flex min-h-0 min-w-0 flex-1 flex-col md:pr-3 md:py-3">
         <div className="flex min-h-0 flex-1 flex-col overflow-hidden md:rounded-[1.75rem] md:bg-surface/55 md:ring-1 md:ring-line/60 md:backdrop-blur-sm">
           <Header
-            nav={nav}
-            stage={stage}
-            onStageChange={setStage}
             searchOpen={searchOpen}
             onSearchToggle={() => setSearchOpen((v) => !v)}
             search={search}
@@ -128,7 +108,6 @@ function AppShell() {
             nav={nav}
             filters={filters}
             onToggleFilter={toggleFilter}
-            onQuickPick={handleQuickPick}
           />
 
           <div className="flex min-h-0 flex-1">

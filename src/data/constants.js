@@ -1,16 +1,3 @@
-export const STAGES = [
-  { id: '6-9m', labelSK: '6–9 mes.', labelCZ: '6–9 měs.' },
-  { id: '9-12m', labelSK: '9–12 mes.', labelCZ: '9–12 měs.' },
-  { id: '12-15m', labelSK: '12–15 mes.', labelCZ: '12–15 měs.' },
-  { id: '15-18m', labelSK: '15–18 mes.', labelCZ: '15–18 měs.' },
-  { id: '18-21m', labelSK: '18–21 mes.', labelCZ: '18–21 měs.' },
-  { id: '21-24m', labelSK: '21–24 mes.', labelCZ: '21–24 měs.' },
-  { id: '24-27m', labelSK: '24–27 mes.', labelCZ: '24–27 měs.' },
-  { id: '27-30m', labelSK: '27–30 mes.', labelCZ: '27–30 měs.' },
-  { id: '30-33m', labelSK: '30–33 mes.', labelCZ: '30–33 měs.' },
-  { id: '33-36m', labelSK: '33–36 mes.', labelCZ: '33–36 měs.' },
-]
-
 export const CATEGORIES = [
   { id: 'stem', labelSK: 'STEM & veda', labelCZ: 'STEM & věda', nav: 'activities' },
   { id: 'songs', labelSK: 'Pesničky & riekanky', labelCZ: 'Písničky & říkanky', nav: 'songs' },
@@ -19,13 +6,9 @@ export const CATEGORIES = [
 ]
 
 export const FILTERS = [
-  { id: 'car', labelSK: 'V aute', labelCZ: 'V autě' },
   { id: 'indoor', labelSK: 'Doma', labelCZ: 'Doma' },
   { id: 'outdoors', labelSK: 'Vonku', labelCZ: 'Venku' },
-  { id: 'no-prep', labelSK: 'Bez prípravy', labelCZ: 'Bez přípravy' },
-  { id: 'under-10', labelSK: 'Do 10 min', labelCZ: 'Do 10 min' },
-  { id: 'water', labelSK: 'Vodná hra', labelCZ: 'Vodní hra' },
-  { id: 'kitchen', labelSK: 'Kuchyňa', labelCZ: 'Kuchyně' },
+  { id: 'car', labelSK: 'Auto', labelCZ: 'Auto' },
 ]
 
 export const NAV_ITEMS = [
@@ -38,14 +21,12 @@ export const NAV_ITEMS = [
 export const UI = {
   SK: {
     appName: 'playground',
-    tagline: 'Montessori sprievodca pre každodenné chvíle',
+    tagline: 'sprievodca pre každý deň',
     searchPlaceholder: 'Hľadať aktivitu, materiál, text…',
     search: 'Hľadať',
-    stage: 'Vek',
-    allStages: 'Všetky etapy',
     filters: 'Filtre',
     categories: 'Kategórie',
-    car: 'V aute',
+    car: 'Auto',
     indoor: 'Doma',
     outdoors: 'Vonku',
     materials: 'Materiál',
@@ -56,9 +37,7 @@ export const UI = {
     duration: 'Trvanie',
     close: 'Zavrieť',
     favoritesEmpty: 'Zatiaľ nič v obľúbených — ťuknite na hviezdičku.',
-    noResults: 'Nič sa nenašlo. Skúste inú etapu alebo filter.',
-    quickPick: 'Prekvap ma',
-    quickPickHint: 'Náhodná aktivita podľa veku',
+    noResults: 'Nič sa nenašlo. Skúste iný filter alebo hľadanie.',
     preview: 'Náhľad',
     selectItem: 'Vyberte položku vľavo',
     results: 'výsledkov',
@@ -68,14 +47,12 @@ export const UI = {
   },
   CZ: {
     appName: 'playground',
-    tagline: 'Montessori průvodce pro každodenní chvíle',
+    tagline: 'průvodce pro každý den',
     searchPlaceholder: 'Hledat aktivitu, materiál, text…',
     search: 'Hledat',
-    stage: 'Věk',
-    allStages: 'Všechny etapy',
     filters: 'Filtry',
     categories: 'Kategorie',
-    car: 'V autě',
+    car: 'Auto',
     indoor: 'Doma',
     outdoors: 'Venku',
     materials: 'Materiál',
@@ -86,9 +63,7 @@ export const UI = {
     duration: 'Trvání',
     close: 'Zavřít',
     favoritesEmpty: 'Zatím nic v oblíbených — klepněte na hvězdičku.',
-    noResults: 'Nic se nenašlo. Zkuste jinou etapu nebo filtr.',
-    quickPick: 'Překvap mě',
-    quickPickHint: 'Náhodná aktivita podle věku',
+    noResults: 'Nic se nenašlo. Zkuste jiný filtr nebo hledání.',
     preview: 'Náhled',
     selectItem: 'Vyberte položku vlevo',
     results: 'výsledků',

@@ -1,18 +1,14 @@
-import { Check, Dices, Lightbulb, Music, Sparkles, Star } from 'lucide-react'
+import { Check, Lightbulb, Music, Sparkles, Star } from 'lucide-react'
 import { FILTERS, NAV_ITEMS } from '../data/constants'
 import { useLanguage } from '../context/LanguageContext'
-import StageSelector from './StageSelector'
 
 const ICONS = { Sparkles, Music, Lightbulb, Star }
 
 export default function Sidebar({
   nav,
   onNavChange,
-  stage,
-  onStageChange,
   filters,
   onToggleFilter,
-  onQuickPick,
 }) {
   const { language, t } = useLanguage()
 
@@ -47,13 +43,7 @@ export default function Sidebar({
         })}
       </nav>
 
-      {nav !== 'songs' && (
-        <div className="mb-6">
-          <StageSelector value={stage} onChange={onStageChange} />
-        </div>
-      )}
-
-      {nav !== 'songs' && (
+      {(nav === 'activities' || nav === 'tips') && (
         <div className="mb-6">
           <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.16em] text-ink-muted">
             {t.filters}
@@ -88,22 +78,6 @@ export default function Sidebar({
           </div>
         </div>
       )}
-
-      <button
-        type="button"
-        onClick={onQuickPick}
-        className="mt-auto flex w-full items-center gap-3 rounded-2xl bg-moss-deep px-4 py-3.5 text-left text-white transition hover:bg-moss"
-      >
-        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10">
-          <Dices size={18} strokeWidth={1.75} />
-        </span>
-        <span className="min-w-0">
-          <span className="block text-sm font-bold">{t.quickPick}</span>
-          <span className="block text-[11px] font-normal text-white/70">
-            {t.quickPickHint}
-          </span>
-        </span>
-      </button>
     </aside>
   )
 }

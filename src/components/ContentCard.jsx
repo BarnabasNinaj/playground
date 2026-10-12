@@ -1,7 +1,7 @@
 import { Star } from 'lucide-react'
 import { useFavorites } from '../context/FavoritesContext'
 import { useLanguage } from '../context/LanguageContext'
-import { CATEGORIES, STAGES } from '../data/constants'
+import { CATEGORIES } from '../data/constants'
 
 const accentByType = {
   activity: 'bg-moss',
@@ -21,12 +21,6 @@ export default function ContentCard({ item, selected, onSelect }) {
   const { language, t } = useLanguage()
   const fav = isFavorite(item.id)
   const cat = CATEGORIES.find((c) => c.id === item.category)
-  const stageLabels = item.stages
-    .map((id) => STAGES.find((s) => s.id === id))
-    .filter(Boolean)
-    .map((s) => (language === 'CZ' ? s.labelCZ : s.labelSK))
-    .slice(0, 2)
-    .join(' · ')
 
   const placeLabel = item.tags?.includes('car')
     ? t.car
@@ -36,14 +30,11 @@ export default function ContentCard({ item, selected, onSelect }) {
         ? t.indoor
         : null
 
-  const songLangLabel =
-    item.lang === 'EN' ? 'EN' : item.lang === 'CZ' ? 'CZ' : item.lang === 'SK' ? 'SK' : null
-
   const meta =
     item.type === 'song'
-      ? [language === 'CZ' ? 'Písnička' : 'Pesnička', songLangLabel]
-          .filter(Boolean)
-          .join(' · ')
+      ? language === 'CZ'
+        ? 'Písnička'
+        : 'Pesnička'
       : item.type === 'tip'
         ? ['Montessori', placeLabel].filter(Boolean).join(' · ')
         : [language === 'CZ' ? cat?.labelCZ : cat?.labelSK, placeLabel]
@@ -95,22 +86,12 @@ export default function ContentCard({ item, selected, onSelect }) {
       <h3 className="mb-2 pl-2 font-display text-[1.15rem] font-semibold leading-snug tracking-tight text-ink">
         {item.title}
       </h3>
-      <p
-        className={`line-clamp-2 pl-2 text-sm leading-relaxed text-ink-soft ${
-          item.type === 'song' ? '' : 'mb-4'
-        }`}
-      >
+      <p className="line-clamp-2 pl-2 text-sm leading-relaxed text-ink-soft">
         {item.description}
       </p>
 
-      {item.type !== 'song' && (
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 pl-2 text-xs text-ink-muted">
-          {item.duration && <span>{item.duration}</span>}
-          {item.duration && stageLabels && (
-            <span className="h-1 w-1 rounded-full bg-line" aria-hidden />
-          )}
-          {stageLabels && <span>{stageLabels}</span>}
-        </div>
+      {item.type !== 'song' && item.duration && (
+        <p className="mt-4 pl-2 text-xs text-ink-muted">{item.duration}</p>
       )}
     </article>
   )

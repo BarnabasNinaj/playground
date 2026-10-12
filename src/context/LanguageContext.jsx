@@ -7,7 +7,7 @@ import { UI } from '../data/constants'
 const LanguageContext = createContext(null)
 
 const STORAGE_KEY = 'playground-language'
-const LANGS = ['SK', 'CZ', 'EN']
+const LANGS = ['SK', 'CZ']
 
 function readStoredLanguage() {
   try {
@@ -35,14 +35,8 @@ export function LanguageProvider({ children }) {
   }
 
   const toggleLanguage = () => {
-    setLanguageState((prev) => {
-      const i = LANGS.indexOf(prev)
-      return LANGS[(i + 1) % LANGS.length]
-    })
+    setLanguageState((prev) => (prev === 'SK' ? 'CZ' : 'SK'))
   }
-
-  // UI copy + activities/tips stay SK/CZ; EN falls back to SK for those.
-  const uiLanguage = language === 'CZ' ? 'CZ' : 'SK'
 
   const value = useMemo(
     () => ({
@@ -50,12 +44,12 @@ export function LanguageProvider({ children }) {
       setLanguage,
       toggleLanguage,
       content: [
-        ...(uiLanguage === 'CZ' ? contentCZ : contentSK),
+        ...(language === 'CZ' ? contentCZ : contentSK),
         ...songs.filter((s) => s.lang === language),
       ],
-      t: UI[uiLanguage],
+      t: UI[language],
     }),
-    [language, uiLanguage],
+    [language],
   )
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>

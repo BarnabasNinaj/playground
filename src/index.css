@@ -210,6 +210,13 @@ body.modal-open {
   padding-right: var(--safe-right);
 }
 
+/* Standalone / installed PWA — edge-to-edge like a native app */
+@media (display-mode: standalone), (display-mode: fullscreen) {
+  body {
+    overscroll-behavior: none;
+  }
+}
+
 .touch-target {
   min-height: 44px;
   min-width: 44px;

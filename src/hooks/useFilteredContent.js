@@ -3,7 +3,6 @@ import { useMemo } from 'react'
 export function useFilteredContent({
   content,
   nav,
-  stage,
   search,
   filters,
   favorites,
@@ -22,10 +21,11 @@ export function useFilteredContent({
         if (item.type !== 'tip') return false
       }
 
-      if (stage && !item.stages.includes(stage)) return false
-
-      // Place/quick filters apply to activities & tips only — not songs
-      if (filters.length > 0 && item.type !== 'song') {
+      if (
+        filters.length > 0 &&
+        (nav === 'activities' || nav === 'tips') &&
+        (item.type === 'activity' || item.type === 'tip')
+      ) {
         const tags = item.tags || []
         if (!filters.every((f) => tags.includes(f))) return false
       }
@@ -47,5 +47,5 @@ export function useFilteredContent({
 
       return haystack.includes(q)
     })
-  }, [content, nav, stage, search, filters, favorites])
+  }, [content, nav, search, filters, favorites])
 }
